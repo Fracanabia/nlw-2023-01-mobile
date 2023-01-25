@@ -6,7 +6,6 @@ import { DAY_SIZE, HabitDay } from "../components/HabitDay";
 import { Header } from "../components/Header";
 import { Loading } from "../components/Loading";
 import { api } from "../lib/axios";
-import { MOCK_SUMMARY } from "../mock";
 import { generateRangeDatesFromYearStart } from "../utils/generate-range-dates-from-year-start";
 
 const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"];
@@ -32,11 +31,8 @@ export function Home() {
       const response = await api.get("/summary");
       setSummary(response.data);
     } catch (error) {
-      console.log("🚀 ~ file: Home.tsx:35 ~ fetchData ~ error", error);
+      console.log("🚀 ~ file: Home.tsx:36 ~ fetchData ~ error", error);
       Alert.alert("Ops", "Não foi possível carregar o sumário de hábitos");
-      // TODO: NÃO CONSEGUI ACESSA O APP LOCAL COM A API USANDO O IP
-      const mock = MOCK_SUMMARY;
-      setSummary(mock);
     } finally {
       setLoading(false);
     }
