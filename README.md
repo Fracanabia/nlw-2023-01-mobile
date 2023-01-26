@@ -59,4 +59,8 @@ npm i axios
 ```
 
 ```bash
+npx expo install react-native-reanimated
+```
+
+```bash
 ```
